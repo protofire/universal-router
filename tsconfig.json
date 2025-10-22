@@ -10,8 +10,9 @@
     "noUnusedParameters": true,
     "lib": ["esnext.string"],
     "typeRoots": ["./typechain", "./node_modules/@types"],
-    "types": ["@nomiclabs/hardhat-ethers"]
+    "types": ["@nomiclabs/hardhat-ethers"],
+    "skipLibCheck": true
   },
-  "include": ["./test"],
+  "include": ["./test", "./scripts"],
   "files": ["./hardhat.config.ts"]
 }

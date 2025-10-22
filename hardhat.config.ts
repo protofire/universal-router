@@ -1,8 +1,4 @@
-import 'hardhat-typechain'
-import '@nomiclabs/hardhat-ethers'
-import '@nomicfoundation/hardhat-chai-matchers'
-import '@nomicfoundation/hardhat-foundry'
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv'
 dotenv.config()
 
 const DEFAULT_COMPILER_SETTINGS = {
@@ -24,6 +20,14 @@ export default {
   paths: {
     sources: './contracts',
   },
+  // Import remappings for lib directory
+  remappings: [
+    "permit2/=lib/permit2/",
+    "solmate/=lib/solmate/",
+    "@uniswap/v4-periphery/=lib/v4-periphery/",
+    "@uniswap/v4-core/=node_modules/@uniswap/v4-core/",
+    "@uniswap/v3-periphery/=lib/v3-periphery/",
+  ],
   networks: {
     hardhat: {
       allowUnlimitedContractSize: false,
